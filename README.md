@@ -6,17 +6,34 @@ Qyro Java SDK
 Using **Maven**:
 
 ```
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+
 <dependency>
-    <groupId>com.qyroai</groupId>
+    <groupId>com.github.qyroai</groupId>
     <artifactId>qyro-java-sdk</artifactId>
-    <version>0.1.0</version>
+    <version>master-SNAPSHOT</version>
 </dependency>
 ```
 
 Using **Gradle**:
 
 ```
-implementation 'com.qyroai:qyro-java-sdk:0.1.0'
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+dependencies {
+    implementation 'com.github.qyroai:qyro-java-sdk:master-SNAPSHOT'
+}
 ```
 
 ### Usage
